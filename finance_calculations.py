@@ -41,11 +41,10 @@ if option == 'INVESTMENT':
     interest_rate = int(input("Interest rate (%):"))/ 100
     years_invested = int(input("How many years will you invest: "))
     interest_type = input("please enter 'simple' or 'compound' for your interest type: ").lower()
-    total_return = "Your total return is: £"
     if interest_type == 'simple':
-        total_return += str(round(deposit_amount * (1 + interest_rate * years_invested), 2))
+        total_return = f"Your total return is: £{round(deposit_amount * (1 + interest_rate * years_invested), 2)}"
     elif interest_type == 'compound':
-        total_return += str(round(deposit_amount * math.pow((1+ interest_rate), years_invested), 2))
+        total_return = f"Your total return is: £{round(deposit_amount * math.pow((1+ interest_rate), years_invested), 2)}"
     else: 
         total_return = "invalid option."
     print(total_return)
@@ -55,5 +54,5 @@ elif option == "BOND":
     repayment_months = int(input("Months repaying: "))
     interest_rate = interest_rate / 12
     monthlyl_repayment = (interest_rate * house_value) / (1 - (1 + interest_rate) ** (-repayment_months))
-    print("Your monthly repayments are: £" + str(round(monthlyl_repayment, 2)))
+    print(f"Your monthly repayments are: £{round(monthlyl_repayment, 2)}")
 
