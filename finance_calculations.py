@@ -36,11 +36,15 @@ print(intro_msg2)
 print(" ")
 option = input("Enter either 'investment' or 'bond' from the menu above to proceed: ").upper()
 
+print("----------------------------------------\n")
+
 if option == 'INVESTMENT':
     deposit_amount = int(input("Deposit amount (£): "))
     interest_rate = int(input("Interest rate (%):"))/ 100
     years_invested = int(input("How many years will you invest: "))
     interest_type = input("please enter 'simple' or 'compound' for your interest type: ").lower()
+    print("----------------------------------------\n")
+
     total_return = "Your total return is: £"
     if interest_type == 'simple':
         total_return += str(round(deposit_amount * (1 + interest_rate * years_invested), 2))
@@ -55,5 +59,7 @@ elif option == "BOND":
     repayment_months = int(input("Months repaying: "))
     interest_rate = interest_rate / 12
     monthlyl_repayment = (interest_rate * house_value) / (1 - (1 + interest_rate) ** (-repayment_months))
+    print("----------------------------------------\n")
+
     print("Your monthly repayments are: £" + str(round(monthlyl_repayment, 2)))
 
